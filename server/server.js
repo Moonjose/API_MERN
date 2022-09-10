@@ -48,7 +48,7 @@ app.delete('/:id', async (req, res) => {
   }
 });
 
-app.post('/users/edit/:id', async (req, res) => {
+app.put('/users/edit/:id', async (req, res) => {
   try {
     const valid = await User.exists({ _id: req.params.id });
     if (valid) {
@@ -64,19 +64,20 @@ app.post('/users/edit/:id', async (req, res) => {
   }
 });
 
-app.get('/users/:id', async (req, res) => {
-  try {
-    const valid = await User.exists({ _id: req.params.id });
-    if (valid) {
-      const user = await User.findById(req.params.id);
-      res.json(user);
-    } else {
-      res.status(400).json({ errors: `User not exists` });
-    }
-  } catch (error) {
-    res.status(400).json({ errors: `${error}` });
-  }
-});
+// SHOW route
+// app.get('/users/:id', async (req, res) => {
+//   try {
+//     const valid = await User.exists({ _id: req.params.id });
+//     if (valid) {
+//       const user = await User.findById(req.params.id);
+//       res.json(user);
+//     } else {
+//       res.status(400).json({ errors: `User not exists` });
+//     }
+//   } catch (error) {
+//     res.status(400).json({ errors: `${error}` });
+//   }
+// });
 
 // End ----------------------------------
 

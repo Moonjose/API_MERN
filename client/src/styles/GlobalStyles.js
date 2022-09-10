@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle} from 'styled-components'
+import styled, { createGlobalStyle} from 'styled-components';
 
 export default createGlobalStyle`
   * {
@@ -28,44 +28,70 @@ export default createGlobalStyle`
   div > h1 {
     font-size: 50px;
   }
-`
 
-export const Button = styled.button`
-  width: 60px;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  background: ${props => props.isred ? '#ff3333' : 'green' };
+  input {
+    border-radius: 5px;
+    outline: none;
+    border: 0px solid;
+    padding: 5px 0px 5px 10px;
+    width: 100%;
+  }
+
+  input:focus {
+    box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5);
+  }
+
+  table {
+    min-width: 100%;
+  }
+
+  button:hover {
+    filter: brightness(120%);
+  }
 `
 
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  height: ${props => props.desc === 'main' ? 'auto' : '300px' };
-  width: ${props => props.desc === 'main' ? 'auto' : '70vw' };;
-  max-width: ${props => props.desc === 'main' ? '360px' : 'auto' };;
+  align-items: center;
+  max-height: 400px;
+  width: 600px;
   margin: 30px auto;
   padding: 15px;
+  border-radius: 10px;
   background: #e3e3e3;
+  box-shadow: 0 0 10px rgba( 0, 0, 0, 0.5);
+`
+export const CreateDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  width: 30vw;
+  min-width: 500px;
+  justify-content: center;
+  background: #e3e3e3;
+  margin: 0 auto;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba( 0, 0, 0, 0.5);
 `
 
 export const Box = styled.div`
   max-height: 500px;
+  width: 100%;
   margin-bottom: 20px;
   overflow-y: scroll;
   overflow-x: hidden;
   outline: auto;
 `
 
-export const Form = styled.div`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 15px;
-  width: 100%;
-  padding: 15px;
+  width: 90%;
+  margin: 0 auto;
   border-radius: 4px;
 `
 
@@ -80,4 +106,11 @@ export const InfoDiv = styled.div`
   border-radius: 10px;
   background: #e3e3e3;
   box-shadow: 0 0 10px rgba( 0, 0, 0, 0.5);
+`
+export const FormButton = styled.button`
+  width: 70px;
+  padding: 5px;
+  background: ${props => props.color};
+  border-radius: 5px;
+  cursor: pointer;
 `
