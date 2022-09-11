@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Container, Form, FormButton } from '../styles/GlobalStyles';
-const baseUrl = 'http://localhost:5000';
+
 const Edit =  () => {
   const [,setUsers] = useState([]);
   const [name, setName] = useState('');
@@ -16,7 +16,7 @@ const Edit =  () => {
   const { id } = useParams();
 
   async function getUsers() {
-    const response = await axios.get(`${baseUrl}`);
+    const response = await axios.get(`${process.env.REACT_APP_URL}`);
     setUsers(response.data);
   }
 
@@ -24,7 +24,7 @@ const Edit =  () => {
     e.preventDefault();
     const body = { name, username, age }
     if(name && username && age) {
-      await axios.put(`${baseUrl}/users/edit/${id}`, body);
+      await axios.put(`${process.env.REACT_APP_URL}/users/edit/${id}`, body);
       navigate('/');
     } else {
       alert('Preencha todos os campos');

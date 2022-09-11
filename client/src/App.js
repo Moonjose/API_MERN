@@ -5,14 +5,6 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import PageNotFound from './components/PageNotFound';
 import Edit from './components/Edit';
-// import { useState } from 'react';
-// import { useEffect } from 'react';
-// import Axios from 'axios';
-// const baseUrl = 'http://localhost:5000';
-
-// import EditUser from './components/EditUser';
-// import UsersPage from './components/UsersPage';
-
 
 function App() {
   return (

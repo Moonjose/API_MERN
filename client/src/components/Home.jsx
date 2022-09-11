@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { Box, Container, Form, FormButton } from '../styles/GlobalStyles';
 import { AiOutlineCaretUp, AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import { HiUserAdd } from 'react-icons/hi';
-const baseUrl = 'http://localhost:5000';
 // ---------------------------------------------------
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -16,7 +15,7 @@ const Home = () => {
   const hasUsers = users.length >= 1;
 
   async function getUsers() {
-    const response = await axios.get(`${baseUrl}`);
+    const response = await axios.get(`${process.env.REACT_APP_URL}`);
     setUsers(response.data);
     console.log(response.data);
   }
@@ -26,7 +25,7 @@ const Home = () => {
       if(name && username && age) {
         e.preventDefault();
         const body = {name, username, age};
-        await axios.post(`${baseUrl}/new`, body)
+        await axios.post(`${process.env.REACT_APP_URL}/new`, body)
         setName('');
         setUsername('');
         setAge(0);
@@ -41,7 +40,7 @@ const Home = () => {
   }
 
   async function deleteUser(id) {
-    await axios.delete(`${baseUrl}/${id}`);
+    await axios.delete(`${process.env.REACT_APP_URL}/${id}`);
     getUsers();
   }
   
