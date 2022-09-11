@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes ----------------------------------
-app.get('/', async (req, res) => {
+app.get('/home', async (req, res) => {
   try {
     const users = await User.find({});
     res.json(users);
@@ -46,7 +46,7 @@ app.delete('/:id', async (req, res) => {
   }
 });
 
-app.put('/users/edit/:id', async (req, res) => {
+app.put('/edit/:id', async (req, res) => {
   try {
     const valid = await User.exists({ _id: req.params.id });
     if (valid) {
