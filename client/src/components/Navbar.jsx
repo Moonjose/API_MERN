@@ -4,7 +4,7 @@ import { AiFillHome } from 'react-icons/ai';
 const Navbar = () => {
   return (
     <nav className='navbar navbar-dark bg-dark navbar-expand-lg'>
-      <Link to='/' className='navbar-brand' style={{ margin: '0 auto' }}>
+      <Link to='/home' className='navbar-brand' style={{ margin: '0 auto' }}>
         <AiFillHome />
       </Link>
     </nav>

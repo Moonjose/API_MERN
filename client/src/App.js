@@ -12,7 +12,7 @@ function App() {
       <GlobalStyles />
       <Navbar />
       <Routes>
-        <Route path='/' exact element={<Home />} />
+        <Route path='/home' exact element={<Home />} />
         <Route path='/edit/:id' exact element={<Edit />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>

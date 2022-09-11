@@ -15,7 +15,7 @@ const Home = () => {
   const hasUsers = users.length >= 1;
 
   async function getUsers() {
-    const response = await axios.get(`${process.env.REACT_APP_URL}`);
+    const response = await axios.get(`${process.env.REACT_APP_URL}/home`);
     setUsers(response.data);
     console.log(response.data);
   }

@@ -16,7 +16,7 @@ const Edit =  () => {
   const { id } = useParams();
 
   async function getUsers() {
-    const response = await axios.get(`${process.env.REACT_APP_URL}`);
+    const response = await axios.get(`${process.env.REACT_APP_URL}/home`);
     setUsers(response.data);
   }
 
@@ -24,8 +24,8 @@ const Edit =  () => {
     e.preventDefault();
     const body = { name, username, age }
     if(name && username && age) {
-      await axios.put(`${process.env.REACT_APP_URL}/users/edit/${id}`, body);
-      navigate('/');
+      await axios.put(`${process.env.REACT_APP_URL}/edit/${id}`, body);
+      navigate('/home');
     } else {
       alert('Preencha todos os campos');
     }

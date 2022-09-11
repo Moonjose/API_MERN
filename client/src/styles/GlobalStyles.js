@@ -48,6 +48,27 @@ export default createGlobalStyle`
   button:hover {
     filter: brightness(120%);
   }
+
+  .errorDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 150px;
+    background: white;
+  }
+
+  .errorDiv h1 {
+    font-size: 200px;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+
+  .errorDiv h2 {
+    font-weight: bold;
+  }
 `
 
 export const Container = styled.section`
@@ -55,7 +76,7 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   max-height: 400px;
-  width: 600px;
+  width: ${props => props.width || '600px'};
   margin: 30px auto;
   padding: 15px;
   border-radius: 10px;
@@ -113,4 +134,7 @@ export const FormButton = styled.button`
   background: ${props => props.color};
   border-radius: 5px;
   cursor: pointer;
+`
+
+export const ErrorDiv = styled.div`
 `
