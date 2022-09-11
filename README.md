@@ -12,9 +12,9 @@ The following endpoints are available:
 
 | Endpoints             | Usage                     | Params                                        |
 | ----------------------| --------------------------| ----------------------------------------------|
-| `GET /`               | Get all of the contacts.  |                                               |
+| `GET /home`           | Get all of the contacts.  |                                               |
 | `POST /new`           | Add a new contact.        |**name, username**: [String] **age**: [Number] | 
-| `PUT /users/edit/:id` | Edit the contact.         |**name, username**: [String] **age**: [Number] |
+| `PUT /edit/:id`       | Edit the contact.         |**name, username**: [String] **age**: [Number] |
 | `DELETE /:id`         | Remove the contact.       |                                               | 
 
 # IMPORTANT
